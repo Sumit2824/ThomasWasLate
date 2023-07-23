@@ -1,4 +1,5 @@
-﻿  Draw.cpp
+﻿  Bob.cpp
+  Draw.cpp
   Engine.cpp
 D:\VS Project\ThomasWasLate\Engine.cpp(7,44): warning C4244: '=': conversion from 'unsigned int' to 'T', possible loss of data
           with
@@ -31,8 +32,10 @@ D:\VS Project\ThomasWasLate\Engine.cpp(16,51): warning C4305: 'argument': trunca
               T=float
           ]
   Input.cpp
-  TextureHolder.cpp
+  Thomas.cpp
+D:\VS Project\ThomasWasLate\Thomas.cpp(7,19): warning C4305: '=': truncation from 'double' to 'float'
   ThomasWasLate.cpp
   Update.cpp
+D:\VS Project\ThomasWasLate\Update.cpp(15,34): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
   Generating Code...
   ThomasWasLate.vcxproj -> D:\VS Project\ThomasWasLate\Debug\ThomasWasLate.exe
