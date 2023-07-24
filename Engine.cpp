@@ -22,6 +22,10 @@ Engine::Engine()
 
 	//Associate the sprite with texture
 	m_BackgroundSprite.setTexture(m_BackgroundTexture);
+
+	//Load the texture for background vertex array
+	m_TextureTiles = TextureHolder::GetTexture("graphics/tiles_sheet.png");
+
 }
 
 void Engine::run()
