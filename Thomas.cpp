@@ -10,6 +10,7 @@ Thomas::Thomas()
 bool Thomas::handleInput()
 {
 	m_JustJumped = false;
+
 	if (Keyboard::isKeyPressed(Keyboard::W))
 	{
 		if (!m_Isjumping && !m_IsFalling)
@@ -21,7 +22,7 @@ bool Thomas::handleInput()
 	}
 	else
 	{
-		m_IsFalling = false;
+		m_Isjumping = false;
 		m_IsFalling = true;
 	}
 

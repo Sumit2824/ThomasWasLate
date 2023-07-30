@@ -21,7 +21,7 @@ bool Engine::detectCollisions(PlayableCharacter& character)
 	//Make sure we don't test position lower than 0
 	//or higher than the end of the array
 	if (startX < 0)startX = 0;
-	if (startX < 0)startY = 0;
+	if (startY < 0)startY = 0;
 	if (endX >= m_LM.getLevelSize().x)endX = m_LM.getLevelSize().x;
 	if (endY >= m_LM.getLevelSize().y)endY = m_LM.getLevelSize().y;
 	
