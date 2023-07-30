@@ -61,30 +61,34 @@ bool Engine::detectCollisions(PlayableCharacter& character)
 					}
 				}
 			}
-			//Is character colloiding with regular block
-			if (character.getRight().intersects(block))
+			if (m_ArrayLevel[y][x] == 1)
 			{
-				character.stopRight(block.left);
+				//Is character colloiding with regular block
+				if (character.getRight().intersects(block))
+				{
+					character.stopRight(block.left);
+				}
+				else if (character.getLeft().intersects(block))
+				{
+					character.stopLeft(block.left);
+				}
+				if (character.getFeet().intersects(block))
+				{
+					character.stopFalling(block.top);
+				}
+				else if (character.getHead().intersects(block))
+				{
+					character.stopJump();
+				}
+				
 			}
-			else if (character.getLeft().intersects(block))
-			{
-				character.stopLeft(block.left);
-			}
-			if (character.getFeet().intersects(block))
-			{
-				character.stopFalling(block.top);
-			}
-			else if (character.getHead().intersects(block))
-			{
-				character.stopJump();
-			}
-
 			if (m_ArrayLevel[y][x] == 4)
 			{
 				//character reached his goal
 				reachGoal = true;
 			}
 		}
+			
 		//Collision detection from particle effects
 		
 		//Has character reached goal

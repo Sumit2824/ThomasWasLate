@@ -31,6 +31,4 @@ D:\VS Project\ThomasWasLate\DetectCollisions.cpp(43,18): warning C4244: '=': con
               T=float
           ]
 D:\VS Project\ThomasWasLate\DetectCollisions.cpp(51,47): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
-  Update.cpp
-  Generating Code...
   ThomasWasLate.vcxproj -> D:\VS Project\ThomasWasLate\Debug\ThomasWasLate.exe

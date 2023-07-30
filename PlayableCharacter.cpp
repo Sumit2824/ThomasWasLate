@@ -40,7 +40,7 @@ Sprite PlayableCharacter::getSprite()
 
 void PlayableCharacter::stopFalling(float position)
 {
-	m_Position.x = position - getPosition().height;
+	m_Position.y = position - getPosition().height;
 	m_Sprite.setPosition(m_Position);
 	m_IsFalling = false;
 }
