@@ -4,6 +4,7 @@
 #include "Thomas.h"
 #include "Bob.h"
 #include "LevelManager.h"
+#include "SoundManager.h"
 
 using namespace sf;
 
@@ -15,6 +16,7 @@ private:
 	Thomas m_Thomas;
 	Bob m_Bob;
 	LevelManager m_LM;
+	SoundManager m_SM;
 
 	const int TILE_SIZE = 50;
 	const int VERTS_IN_QUAD = 4;
@@ -74,6 +76,12 @@ private:
 	void loadLevel();
 
 	bool detectCollisions(PlayableCharacter& character);
+
+	//Make a vector of a best places to emit sound from
+	void populateEmitters(vector<Vector2f>& vSoundEmitters, int** arraylevel);
+	
+	//A vector of vector2f for the fire emitter locations
+	vector<Vector2f> m_fireEmitters;
 
 public:
 	//The engine constructor
