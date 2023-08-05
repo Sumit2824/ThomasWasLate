@@ -53,11 +53,12 @@ bool Engine::detectCollisions(PlayableCharacter& character)
 					//Which sound should be played?
 					if (m_ArrayLevel[y][x] == 2) //Fire,
 					{
-						//Play a sound
+						m_SM.playFallInFire();
 					}
 					else
 					{
 						//Play a sound
+						m_SM.playFallInWater();
 					}
 				}
 			}

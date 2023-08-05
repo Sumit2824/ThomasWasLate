@@ -14,6 +14,10 @@ void Engine::loadLevel()
 	//Load the next 2D array with the map for the level
 	//And repoppulate the vertex array
 	m_ArrayLevel = m_LM.nextLevel(m_VALevel);
+
+	//Prepare the sound emitters
+	populateEmitters(m_fireEmitters, m_ArrayLevel);
+
 	m_TimeRemaining = m_LM.getTimeLimit();
 	m_Thomas.spawn(m_LM.getStartPosition(), GRAVITY);
 	m_Bob.spawn(m_LM.getStartPosition(), GRAVITY);
