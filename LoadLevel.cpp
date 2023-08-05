@@ -5,7 +5,7 @@ void Engine::loadLevel()
 	m_Playing = false;
 
 	//Delete the previous allocated memory
-	for (int i = 0; i < m_LM.getLevelSize().y; ++i)
+	for (int i = 0; i < m_LM.getLevelSize().y; i++)
 	{
 		delete[]m_ArrayLevel[i];
 	}
