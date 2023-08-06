@@ -5,6 +5,10 @@ void Engine::draw()
 	//Rub out the last frame
 	m_Window.clear(Color::White);
 
+	//Update the shader parameters
+	m_RippleShader.setUniform("uTime", m_GameTimeTotal.asSeconds());
+
+
 	if (!m_SplitScreen)
 	{
 		//Switch to background view
@@ -12,6 +16,11 @@ void Engine::draw()
 
 		//Draw the background
 		m_Window.draw(m_BackgroundSprite);
+
+
+		//m_Window.draw(m_BackgroundSprite);
+		// Draw the background, complete with shader effect
+		m_Window.draw(m_BackgroundSprite, &m_RippleShader);
 
 		//Switch to main view
 		m_Window.setView(m_MainView);
@@ -42,6 +51,10 @@ void Engine::draw()
 		//Draw the background
 		m_Window.draw(m_BackgroundSprite);
 
+		//m_Window.draw(m_BackgroundSprite);
+		// Draw the background, complete with shader effect
+		m_Window.draw(m_BackgroundSprite, &m_RippleShader);
+
 		//Switch to Left View
 		m_Window.setView(m_LeftView);
 
@@ -66,6 +79,10 @@ void Engine::draw()
 
 		//Draw the background
 		m_Window.draw(m_BackgroundSprite);
+
+		//m_Window.draw(m_BackgroundSprite);
+		// Draw the background, complete with shader effect
+		m_Window.draw(m_BackgroundSprite, &m_RippleShader);
 
 		//Switch to Right View
 		m_Window.setView(m_RightView);

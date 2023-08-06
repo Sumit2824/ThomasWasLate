@@ -18,6 +18,18 @@ Engine::Engine()
 	m_BGLeftView.setViewport(FloatRect(0.001f, 0.001f, 0.498f, 0.998f));
 	m_BGRightView.setViewport(FloatRect(0.5f, 0.001f, 0.499f, 0.998f));
 	
+
+	//Can this graphics card use shaders?
+	if (!sf::Shader::isAvailable())
+	{
+		m_Window.close();
+	}
+	else
+	{
+		//Load two shaders
+		m_RippleShader.loadFromFile("shaders/vertShader.vert", "shaders/rippleShader.frag");
+	}
+
 	m_BackgroundTexture = TextureHolder::GetTexture("graphics/background.png");
 
 	//Associate the sprite with texture
@@ -28,6 +40,8 @@ Engine::Engine()
 
 	//Initialize the Particle system
 	m_PS.init(1000);
+
+
 }
 
 void Engine::run()
