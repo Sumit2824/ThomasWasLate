@@ -83,6 +83,21 @@ bool Engine::detectCollisions(PlayableCharacter& character)
 				}
 				
 			}
+
+			//Have the charactes feet touched fire or water?
+			//If so start the particle effect
+			//Make sure this is the first time we detected it
+			if (!m_PS.running())
+			{
+				if (m_ArrayLevel[y][x] == 2 || m_ArrayLevel[y][x] == 3)
+				{
+					if (character.getFeet().intersects(block))
+					{
+						m_PS.emitParticles(character.getCenter());
+					}
+				}
+			}
+
 			if (m_ArrayLevel[y][x] == 4)
 			{
 				//character reached his goal
